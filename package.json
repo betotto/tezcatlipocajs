@@ -1,0 +1,33 @@
+{
+  "name": "tezcatlipocajs",
+  "version": "1.0.0",
+  "description": "Project to manage permission, users and groups based on graphql",
+  "main": "index.js",
+  "author": "betotto <gtottog@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "node node_modules/cucumber/bin/cucumber.js features"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betotto/tezcatlipocajs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/betotto/tezcatlipocajs/issues"
+  },
+  "homepage": "https://github.com/betotto/tezcatlipocajs#readme",
+  "keywords": [
+    "graphql",
+    "authorization",
+    "es6"
+  ],
+  "dependencies": {
+    "express": "4.14.0",
+    "express-graphql": "0.6.1",
+    "graphql": "0.8.2"
+  },
+  "devDependencies": {
+    "cucumber": "2.0.0-rc.5",
+    "expect.js": "0.3.1"
+  }
+}
