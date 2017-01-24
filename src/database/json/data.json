@@ -1,0 +1,32 @@
+{
+	"users": [
+		{
+			"id": 0,
+			"name": "admin",
+			"email": "admin@site.com",
+			"groups": [
+				"admin"
+			],
+			"screenPermissions": [],
+			"businessPermissions": []
+		}
+	],
+	"groups": [
+		{
+			"id": "admin",
+			"description": "Administrator group, with all permision",
+			"screenPermissions": [
+				{
+					"path": "all",
+					"description": "Can access all Screens"
+				}
+			],
+			"businessPermissions": [
+				{
+					"path": "all",
+					"description": "Can do anything in the system"
+				}
+			]
+		}
+	]
+}
