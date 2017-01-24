@@ -1,20 +1,23 @@
-var { graphql, buildSchema } = require('graphql');
+const express = require('express');
+const graphqlHTTP = require('express-graphql');
+const { schema, root } = require('./src/schemaGraph');
 
-// Construct a schema, using GraphQL schema language
-var schema = buildSchema(`
-  type Query {
-    hello: String
-  }
-`);
+const app = express();
+/*
+   Class: index
+   The principal class of the program.
+*/
+app.use('/graphql', graphqlHTTP({
+	schema: schema,
+	rootValue: root,
+	graphiql: true,
+}));
 
-// The root provides a resolver function for each API endpoint
-var root = {
-  hello: () => {
-    return 'Hello world!';
-  },
-};
+app.listen(4000);
 
-// Run the GraphQL query '{ hello }' and print out the response
-graphql(schema, '{ hello }', root).then((response) => {
-  console.log(response);
-});
+
+const _ = require('lodash');
+
+console.log(_.find([], data => {
+	return data !== null;
+}));
