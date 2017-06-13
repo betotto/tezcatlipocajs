@@ -1,11 +1,27 @@
 {
+	"currentUserId": 0,
 	"users": [
 		{
 			"id": 0,
-			"name": "admin",
+			"userName": "admin",
 			"email": "admin@site.com",
 			"groups": [
-				"admin"
+				{
+					"name": "admin",
+					"description": "Administrator group, with all permision",
+					"screenPermissions": [
+						{
+							"path": "screen:all",
+							"description": "All the screens"
+						}
+					],
+					"businessPermissions": [
+						{
+							"path": "business:all",
+							"description": "All the modules"
+						}
+					]
+				}
 			],
 			"screenPermissions": [],
 			"businessPermissions": []
@@ -13,20 +29,30 @@
 	],
 	"groups": [
 		{
-			"id": "admin",
+			"name": "admin",
 			"description": "Administrator group, with all permision",
 			"screenPermissions": [
 				{
-					"path": "all",
-					"description": "Can access all Screens"
+					"path": "screen:all",
+					"description": "All the screens"
 				}
 			],
 			"businessPermissions": [
 				{
-					"path": "all",
-					"description": "Can do anything in the system"
+					"path": "business:all",
+					"description": "All the modules"
 				}
 			]
+		}
+	],
+	"permissions": [
+		{
+			"path": "business:all",
+			"description": "All the modules"
+		},
+		{
+			"path": "screen:all",
+			"description": "All the screens"
 		}
 	]
 }

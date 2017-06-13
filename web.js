@@ -1,25 +1,25 @@
-const UserType = require('./src/modules/user/userType');
+console.log(recurArray([1, 3, 2, 1]));
 
+function recurArray(sequence) {
+    if(sequence.length === 1 || sequence.length === 2) {
+        return true;
+    } else {
+        var data = true;
+        for(var i = 0; i < sequence.length; i++) {
 
-UserType.addUser(
-	{
-		user: {
-			"id": 0,
-			"name": "admin",
-			"email": "admin@site.com",
-			"groups": [
-				"admin"
-			],
-			"screenPermissions": [],
-			"businessPermissions": []
-		}
-	}
-).catch(error => {
-	console.log(error);
-});
+			console.log((sequence) + ' ' + i + ' ' + (sequence.length -i) + ' ' + sequence.slice(i, (sequence.length -i)));
+			data = data && isSequence(sequence.slice(i, sequence.length -i));
+        }
+        return data;
+    }
+}
 
-UserType.getScreenPermisions({idUser: 0}).then((permissions) => {
-	console.log(permissions);
-}).catch(error => {
-	console.log(error);
-});
+function isSequence(seq) {
+	var i;
+    for(i = (seq.length + 1); i > 1; i--){
+        if(seq[i] < seq[i-1]) {
+            return false;
+        }
+    }
+    return true;
+}

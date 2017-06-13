@@ -1,21 +1,11 @@
 const _ = require('lodash');
 
-exports.findNextId = (users) => {
-	let maxId = 0;
-	_.each(users, user => {
-		if(user.id > maxId) {
-			maxId = user.id;	
-		}
-	});
-	return (maxId + 1);
-};
-
 exports.getAllPermission = (user, groups, permissionType) => {
 	let screenPermissions = [];
 	let businessPermissions = [];
 	if(permissionType === 'SCREEN' || permissionType === 'ALL') {
 		screenPermissions = user.screenPermissions;
-	} 
+	}
 	if(permissionType === 'BUSINESS' || permissionType === 'ALL') {
 		businessPermissions = user.businessPermissions;
 	}
@@ -28,7 +18,6 @@ exports.getAllPermission = (user, groups, permissionType) => {
 				if(permissionType === 'BUSINESS' || permissionType === 'ALL') {
 					businessPermissions = businessPermissions.concat(user.businessPermissions);
 				}
-				
 			}
 		});
 	});
@@ -36,4 +25,4 @@ exports.getAllPermission = (user, groups, permissionType) => {
 		screenPermissions,
 		businessPermissions
 	};
-}
+};

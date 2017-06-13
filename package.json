@@ -6,7 +6,7 @@
   "author": "betotto <gtottog@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "node node_modules/cucumber/bin/cucumber.js features"
+    "dev-server": "node_modules/.bin/nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,11 @@
     "es6"
   ],
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "4.14.0",
     "express-graphql": "0.6.1",
-    "graphql": "0.8.2"
+    "graphql": "0.8.2",
+    "nodemon": "1.11.0"
   },
   "devDependencies": {
     "cucumber": "2.0.0-rc.5",
